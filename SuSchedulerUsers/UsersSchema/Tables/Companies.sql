@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Companies]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [Name] NVARCHAR(100) NOT NULL, 
+    [Description] NVARCHAR(500) NULL, 
+    [Created] DATETIMEOFFSET NOT NULL DEFAULT (SYSDATETIMEOFFSET()) 
+)
