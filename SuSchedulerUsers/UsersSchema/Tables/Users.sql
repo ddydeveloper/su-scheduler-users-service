@@ -4,7 +4,7 @@
     [FirstName] NVARCHAR(100) NOT NULL, 
     [LastName] NVARCHAR(100) NOT NULL, 
     [TimeZoneId] NVARCHAR(500) NOT NULL DEFAULT (N'UTC'), 
-    [Created] DATETIMEOFFSET NOT NULL DEFAULT (SYSDATETIMEOFFSET()), 
+    [Created] DATETIME NOT NULL DEFAULT (GETDATE()), 
     [CompanyId] INT NOT NULL, 
     [PositionId] INT NOT NULL, 
     CONSTRAINT [FK_Users_Companies] FOREIGN KEY ([CompanyId]) REFERENCES [Companies]([Id]), 
