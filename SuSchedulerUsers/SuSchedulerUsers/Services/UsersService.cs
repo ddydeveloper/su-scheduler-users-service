@@ -62,19 +62,15 @@ namespace SuSchedulerUsers.Services
             return result;
         }
 
-        public async Task<IEnumerable<User>> GetUsersAsync()
+        public async Task<Company> GetCompanyAsync(int companyId)
         {
-            IEnumerable<User> result;
+            Company result;
             using (var conn = new SqlConnection(_connectionStrings.UsersDb))
             {
-                result = await conn.QueryAsync<User, Company, Position, User>(GetRequests.GetUsers,
-                    (user, company, position) =>
-                    {
-                        user.Company = company;
-                        user.Position = position;
+                var param = new DynamicParameters();
+                param.Add("@Id", companyId, DbType.Int32, ParameterDirection.Input);
 
-                        return user;
-                    });
+                result = await conn.QuerySingleAsync<Company>(GetRequests.GetCompany, param);
             }
 
             return result;

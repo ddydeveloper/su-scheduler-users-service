@@ -13,5 +13,7 @@ WHERE U.Id = @UserId
         public static string GetUser = $@"{GetUsers} WHERE U.Id = @UserId";
 
         public static string GetCompanyUsers = $@"{GetUsers} WHERE U.CompanyId = @CompanyId";
+
+        public static string GetCompany = @"SELECT * FROM Companies WHERE Id = @Id";
     }
 }

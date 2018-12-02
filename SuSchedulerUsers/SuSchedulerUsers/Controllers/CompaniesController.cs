@@ -16,6 +16,12 @@ namespace SuSchedulerUsers.Controllers
         {
             _usersService = usersService;
         }
+        
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Company>> Get(int id)
+        {
+            return Ok(await _usersService.GetCompanyAsync(id));
+        }
 
         [HttpGet("{id}/users")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers(int id)

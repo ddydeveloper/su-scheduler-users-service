@@ -10,6 +10,6 @@ namespace SuSchedulerUsers.Services
 
         Task<IEnumerable<User>> GetCompanyUsersAsync(int companyId);
 
-        Task<IEnumerable<User>> GetUsersAsync();
+        Task<Company> GetCompanyAsync(int companyId);
     }
 }

@@ -28,11 +28,5 @@ namespace SuSchedulerUsers.Controllers
 
             return Ok(user);
         }
-
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetAll()
-        {
-            return Ok(await _usersService.GetUsersAsync());
-        }
     }
 }
