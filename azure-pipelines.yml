@@ -10,7 +10,7 @@ variables:
   imageName: 'scheduler-users-service:$(build.buildId)'
 
 steps:
-- script:  docker login $(dockerId).azurecr.io -u $(dockerId) -p $(dockerPassword)
+- script: docker login $(dockerId).azurecr.io -u $(dockerId) -p $(dockerPassword)
   displayName: 'Docker login'
 
 - script: docker build -f Dockerfile -t $(dockerId).azurecr.io/$(imageName) .
